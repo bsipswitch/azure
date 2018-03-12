@@ -1,4 +1,3 @@
-<powershell>
 winrm quickconfig -q
 winrm set winrm/config/winrs '@{MaxMemoryPerShellMB="300"}'
 winrm set winrm/config '@{MaxTimeoutms="1800000"}'
@@ -29,4 +28,3 @@ winrm create winrm/config/listener?Address=*+Transport=HTTPS  `@`{Hostname=`"($c
 Restart-Service winrm
 New-NetFirewallRule -Name "SMB445" -DisplayName "SMB445" -Protocol TCP -LocalPort 445
 New-NetFirewallRule -Name "WINRM5986" -DisplayName "WINRM5986" -Protocol TCP -LocalPort 5986
-</powershell>
