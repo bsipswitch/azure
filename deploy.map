@@ -1,0 +1,7 @@
+webdeploy:
+  - EUW-{{ pillar['deployment']['shortname'] }}-N1-PD:
+      availability_set: EUW-{{ pillar['deployment']['shortname'] }}-AS-PD
+      load_balancer_backend_address_pools:
+        EUW-{{ pillar['deployment']['shortname'] }}-NLB-PD:
+          - EUW-{{ pillar['deployment']['shortname'] }}-BEP-PD
+      resource_group: EUW-{{ pillar['deployment']['shortname'] }}-RG-PD
